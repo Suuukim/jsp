@@ -15,8 +15,6 @@
 		out.print("<li>" + names[i] + "</li>");		//out은 jsp 객체. html문서에 출력을 담당.
 													//태그를 출력하면 html문서에는 렌더링 결과로 출력
 	}
-	
-			
 %>
 </ul>
 
