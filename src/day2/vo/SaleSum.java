@@ -1,13 +1,24 @@
 package day2.vo;
 
-public class SaleSum {	//join 결과 컬럼만 저장할 vo 클래스
-	private String custNo;
+public class SaleSum {		//join 결과 컬럼만 저장할 vo 클래스
+	private int custNo;
 	private String custName;
 	private String grade;
 	private int sum;
 	
+	
+	@Override
+	public String toString() {
+		return "SaleSum [custNo=" + custNo + ", custName=" + custName + 
+				", grade=" + grade + ", sum=" + sum + "]";
+	}
+
 	//생성자
-	public SaleSum(String custNo, String custName, String grade, int sum) {
+	public SaleSum() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public SaleSum(int custNo, String custName, String grade, int sum) {
 		super();
 		this.custNo = custNo;
 		this.custName = custName;
@@ -15,12 +26,11 @@ public class SaleSum {	//join 결과 컬럼만 저장할 vo 클래스
 		this.sum = sum;
 	}
 
-	//getter,setter
-	public String getCustNo() {
+	public int getCustNo() {
 		return custNo;
 	}
 
-	public void setCustNo(String custNo) {
+	public void setCustNo(int custNo) {
 		this.custNo = custNo;
 	}
 
@@ -48,10 +58,4 @@ public class SaleSum {	//join 결과 컬럼만 저장할 vo 클래스
 		this.sum = sum;
 	}
 	
-	
-	
-	
-
-
-
 }
