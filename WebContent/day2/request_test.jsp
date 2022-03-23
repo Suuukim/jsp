@@ -11,6 +11,9 @@
 			form_test.html?data1=Suuukim&data2=js
 	 		?data1=Suuukim&data2=js 은 query string 이라고 합니다. data1,data2는 사용자 입력 파라미터
 	 		request_test.jsp 에서는 위의 데이터를 전달 받습니다.
+	 		
+	 		form 태그에서 method 설정 없으면 기본이 'get' : 쿼리트 스트링으로 입력값 전달(데이터 조회할 떄 사용)
+	 		
 	 -->
 	 
 	 <%

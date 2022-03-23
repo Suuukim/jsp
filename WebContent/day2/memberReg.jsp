@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,14 +10,20 @@
 <body>
 <!-- memberReg.html 에서 입력한 7개의 사용자 입력값을 전달받아서 table 태그에 출력해보세요.-->
 <%
+	//method='post' 방식으로 데이터 전달되었을 때 인코딩 꼭 하세요.
+	request.setCharacterEncoding("UTF-8");
+	
 	String name = request.getParameter("name");
 	String password = request.getParameter("password");
-	String email = request.getParameter("email");
-	String age = request.getParameter("age");
+	String email = request.getParameter("email");	
+	int age = Integer.parseInt(request.getParameter("age"));			//프론트엔드에서 유효성 검사를 했다는 조건.
 	String addr = request.getParameter("addr");
 	String gender = request.getParameter("gender");
 	String[] hobby = request.getParameterValues("hobby");
-	
+	String hobbies = Arrays.toString(request.getParameterValues("hobby"));
+	hobbies = hobbies.substring(1, hobbies.length()-1); 
+	//Arrays.toString 은 [] 기호 표시이므로 이 기호를 빼고 문자열 추출
+	//참고 : hopby는 배열입니다. -> getParameterValues() 메소드로 데이터를 받습니다. -> 변수타입은 String[]
 %>
 
 <table>
@@ -42,14 +49,11 @@
 	</tr>
 	<tr>
 		<th>성별</th>
-		<td><%= gender%></td>
+		<td><%= gender.equals("male")? "남성":"여성"%></td>
 	</tr>
 	<tr>
 		<th>취미</th>
-		<td><%for(int i=0;i<hobby.length;i++) { 
-			out.print(hobby[i]);
-			out.print("/");} %>
-		</td>
+		<td><%=hobbies %></td>
 	</tr>
 
 </table>
