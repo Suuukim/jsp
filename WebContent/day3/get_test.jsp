@@ -27,7 +27,7 @@
 			a태그의 href속성 또는 자바스크립트의 location.href='(url)'을 사용합니다.
 			-->
 			<li> <a href="get_result.jsp?custno=<%= list.get(i).getCustNo()%>">
-				<%=list.get(i).getCustNo() %></a> 
+				<%=list.get(i).getClass() %></a> 
 				:<%=list.get(i).getCustName() %>
 			</li>				
 				
