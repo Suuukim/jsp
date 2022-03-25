@@ -17,7 +17,6 @@ public class HrdSaleDao {
 		return dao;
 	}
 	
-	
 	public List<SaleSum> selectSale(){
 		Connection conn = OracleConnectUtil.connect();
 		String sql="SELECT mt.CUSTNO , CUSTNAME ," + 

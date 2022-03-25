@@ -22,8 +22,6 @@
             <li><a href="1_index.jsp">홈으로.</a></li>
         </ul>
     </nav>
-	
-    
         <section>
             <h4 style="text-align: center;" class="section"><strong>쇼핑몰 회원관리 프로그램</strong></h4>
         <p>쇼핑몰 회원정보와 회원매출정보 데이터베이스를 구축하고 회원관리 프로그램을 작성하는 프로그램이다. <br>
@@ -38,7 +36,6 @@
             </ol>
         </p>
         </section>
-    
     <footer>
         <p>HRDKOREA Copyrightⓒ2016 All rights reserved. Human Resources Development Service of Korea</p>
     </footer>
