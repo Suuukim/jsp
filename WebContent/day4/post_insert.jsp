@@ -1,3 +1,5 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="koreait.vo.HrdMember"%>
 <%@page import="koreait.dao.HrdMemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -30,11 +32,19 @@ button {
 <script src="member_valid.js"></script>
 <script type="text/javascript">
 	function isSubmit(){
-        const frm = document.forms[0];
+    const frm = document.forms[0];
 		if(valid_check()){	//유효성 검사 함수를 호출/실행.
 			//유효성 검사 통과	
 			frm.submit();
 		}
+	}
+	function init() {
+		const frm = document.forms[0];
+		frm.name.value="";
+		frm.tel.value="";
+		frm.addr.value="";
+		frm.grade.value="";
+		frm.city_code.value="";
 	}
 </script>
 </head>
@@ -42,6 +52,11 @@ button {
 <%
 		HrdMemberDao dao = HrdMemberDao.getInstance();
 		int next = dao.getNextSeq();
+		
+		//오늘 날짜 출력을 위한 문자열 만들기 방법2)
+		LocalDate today = LocalDate.now(); 	//현재 시간 가져오기
+		String str_today = today.format(DateTimeFormatter.ofPattern("yyyyMMdd"));		//특정패턴 문자열로 변환
+		out.print(str_today);		//reg_date input 요소의 value
 %>
 	<!-- Dao클래스에 insert() 메소드를 만듭니다. - 지금 이 화면을 등록화면에 맞게 수정하세요.
 	     - member_insert.jsp 를  구현하세요.(사용자 입력값으로 db테이블에 insert하기)    -->
@@ -82,7 +97,12 @@ button {
                 <tr>
                     <td colspan="2" style="text-align: center;">
                         <button type="button" onclick="isSubmit()">등록</button>
-                        <button type="reset">다시쓰기</button>
+                        <button type="button" onclick="init()">다시쓰기</button>
+                        <!-- <button type="reset">다시쓰기</button> -->
+                        <!-- 다시쓰기는 input 태그에 value 속성값을 초기값으로 되돌리는 것입니다.
+                        	일반적으로는 type='reset'기능 사용보다는 선택적인 초기값으로 되돌리는
+                        	자바스키립트 함수로 합니다.
+                        -->
                     </td>
                 </tr>
 

@@ -30,7 +30,6 @@
 				<%=list.get(i).getClass() %></a> 
 				:<%=list.get(i).getCustName() %>
 			</li>				
-				
 	<%
 			}
 	

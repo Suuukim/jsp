@@ -51,12 +51,12 @@ public class HrdMemberDao {
 			
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, vo.getCustNo());
 				pstmt.setString(2, vo.getCustName());
 				pstmt.setString(3, vo.getPhone());
 				pstmt.setString(4, vo.getAddress());
 				pstmt.setString(5, vo.getGrade());
 				pstmt.setString(6, vo.getCity());
-				pstmt.setInt(1, vo.getCustNo());
 				
 				pstmt.execute();
 				System.out.println("회원 등록이 완료되었습니다.");
