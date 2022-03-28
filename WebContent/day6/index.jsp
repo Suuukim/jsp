@@ -13,7 +13,7 @@
 	<a href="forward_test.jsp?name=momo">forward_test.jsp	url 요청</a><br>
 	<%
 		session.setAttribute("sdata", "sana");		//session 객체에 애트리뷰트로 데이터 저장.
-		application.setAttribute("adata","나연");
+		application.setAttribute("adata","나연");	//
 	%>
 </body>
 </html>
